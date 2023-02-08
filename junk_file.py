@@ -94,3 +94,20 @@ for i in range(len(act)):
     
     
     
+
+# def ndcg(rank, k):
+#     """Normalized Discounted Cumulative Gain.
+#     Args:
+#         :param rank: A list.
+#         :param k: A scalar(int).
+#     :return: ndcg.
+#     """
+#     res = 0.0
+#     for r in rank:
+#         if r < k:
+#             res += 1 / np.log2(r + 2)
+#     return res / len(rank)
+# arr = np.array([4,3,1,8,7,19,11])
+# K = 5
+
+ndcg(arr,K)
