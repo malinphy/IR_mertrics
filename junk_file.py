@@ -72,6 +72,16 @@ class IR_metrics():
         recall = float(num_hit) / len(self.actual)
         f1  = 2*(precision)*(recall) / (precision+recall)
         return f1
+
+    def mrr_K(self):
+        # self.predicted[0]
+        print('mrr_K:',self.predicted[:self.k][0])
+        x = self.predicted[:self.k][0]
+        rank = (1/(x+1)) ### Because of the zero division error 1 added to denominator
+        
+        return rank
+
+
 for i in range(len(act)):
     k=8
     print(IR_metrics(act[i], pred[i], 5).recall_K2())
@@ -79,6 +89,7 @@ for i in range(len(act)):
     print('Precision@'+str(k),IR_metrics(act[i], pred[i], k).precision_K())
     print('recall@'+str(k),IR_metrics(act[i], pred[i], k).recall_K()) ### check this one also
     print('F1@'+str(k),IR_metrics(act[i], pred[i], k).F1_K())
+    print('mrr@'+str(k),IR_metrics(act[i], pred[i], k).mrr_K())
     
     
     
