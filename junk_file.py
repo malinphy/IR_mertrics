@@ -110,4 +110,5 @@ for i in range(len(act)):
 # arr = np.array([4,3,1,8,7,19,11])
 # K = 5
 
-ndcg(arr,K)
+# ndcg(arr,K)
+# https://github.com/ZiyaoGeng/RecLearn/blob/reclearn/reclearn/evaluator/metrics.py
